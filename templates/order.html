@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="theme-color"
+      content="linear-gradient(to bottom, #61daff, #656bff)"
+    />
+    <meta name="description" content="Ashif Coffee Shop" />
+    <meta
+      name="keywords"
+      content="add to cart, add to cart javascript, localstorage add to cart, ecommerce shopping javascript, shooping cart demo"
+    />
+    <meta name="author" content="Rajamanickam" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/mystyle2.css')}}"
+    />
+    <link rel="icon" href="https://shorturl.at/yAHUZ" />
+    <link rel="stylesheet" href="https://shorturl.at/uFQ26" />
+    <link rel="stylesheet" href="https://shorturl.at/agkM7" />
+    <title>Ashif Coffee Shop</title>
+  </head>
+
+  <body>
+    <main>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="{{url_for('index')}}"
+          ><strong>Home</strong></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto"></ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              id="search_field"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+          <button
+            type="button"
+            class="btn btn-success my-2 my-sm-0"
+            data-toggle="modal"
+            data-target="#staticBackdrop"
+          >
+            <i class="fas fa-shopping-cart total-count"></i>
+          </button>
+        </div>
+      </nav>
+      <section>
+        <div class="featured-area pt-100 pb-70">
+          <div class="container">
+            <div class="tab featured-tab-area">
+              <div class="row justify-content-center">
+                <div class="col-lg-4col-md-8">
+                  <ul class="tabs active">
+                    <li class="">
+                      <a href="#"> All </a>
+                    </li>
+                    <li class="">
+                      <a href="#"> Coffee </a>
+                    </li>
+                    <li class="">
+                      <a href="#"> Tea </a>
+                    </li>
+                    <li class="">
+                      <a href="#"> Milk / Chocolate </a>
+                    </li>
+                    <li class="">
+                      <a href="#"> Other </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tab_content current active pt-45">
+                <!-- Americano -->
+                <div class="tabs_item current">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/americano.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Americano</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 120</h4>
+                            <span>(4.9)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Americano"
+                              data-price="120"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Fresh Milk -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/milk.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">FreshMilk</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 50</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Fresh Milk"
+                              data-price="50"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Black Tea -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/tea.jpeg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Black Tea </a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 45</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Black Tea"
+                              data-price="45"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Latte -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/latte.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Latte</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 135</h4>
+                            <span>(4.9)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Latte"
+                              data-price="135"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Matcha Latte -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/matcha.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Matcha Latte</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 70</h4>
+                            <span>(4.2)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Matcha Latte"
+                              data-price="70"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Cappucino -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/cappucino.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Cappuccino</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 145</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Cappuccino"
+                              data-price="145"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Cocoa Frappe -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/choc.png')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Cocoa Frappe</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 95</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Cocoa Frappe"
+                              data-price="95"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Caramel Milk -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/caramel.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Caramel milk</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 75</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Caramel fresh milk"
+                              data-price="75"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Strawberry Cheesecake -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/straw.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Strawberry</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 165</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Strawberry Cheesecake"
+                              data-price="165"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Red Bean -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/redbean.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Red Bean</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 35</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Red Bean"
+                              data-price="35"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Espresso -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/espresso.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Espresso </a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 100</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Espresso"
+                              data-price="100"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Lemon Tea -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/lemon.jpeg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Lemon Tea</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 65</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Lemon Tea"
+                              data-price="65"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Coffee -->
+                <div class="tabs_item">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/americano.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+
+                        <!-- Americano -->
+                        <div class="content">
+                          <h3><a href="#">Americano</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 120</h4>
+                            <span>(4.9)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Americano"
+                              data-price="120"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Latte -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/latte.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Latte</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 135</h4>
+                            <span>(4.9)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Latte"
+                              data-price="135"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Cappuccino -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/cappucino.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Cappuccino</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 145</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Cappuccino"
+                              data-price="145"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Espresso -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/espresso.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Espresso </a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 100</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Espresso"
+                              data-price="100"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tea -->
+                <div class="tabs_item">
+                  <div class="row justify-content-center">
+                    <!-- Black Tea -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/tea.jpeg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Black Tea </a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 45</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Black Tea"
+                              data-price="45"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Matcha Latte -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/matcha.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Matcha Latte</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 70</h4>
+                            <span>(4.2)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Matcha Latte"
+                              data-price="70"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Lemon Tea -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/lemon.jpeg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Lemon Tea</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 65</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Lemon Tea"
+                              data-price="65"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Milk / Chocolate -->
+                <div class="tabs_item">
+                  <div class="row justify-content-center">
+                    <!-- Fresh Milk -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/milk.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">FreshMilk</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 50</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Fresh Milk"
+                              data-price="50"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Cocoa Frappe -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/choc.png')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Cocoa Frappe</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 95</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Cocoa Frappe"
+                              data-price="95"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Caramel Milk -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/caramel.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Caramel milk</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 75</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Caramel fresh milk"
+                              data-price="75"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Strawberry Cheesecake -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/straw.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Strawberry</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 165</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Strawberry Cheesecake"
+                              data-price="165"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Other -->
+                <div class="tabs_item">
+                  <div class="row justify-content-center">
+                    <!-- Red Bean -->
+                    <div class="col-lg-3 col-md-6">
+                      <div class="featured-item">
+                        <div class="featured-item-img">
+                          <a href="#">
+                            <img
+                              src="{{url_for('static', filename='img/redbean.jpg')}}"
+                              alt="Images"
+                            />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h3><a href="#">Red Bean</a></h3>
+                          <hr />
+                          <div class="content-in">
+                            <h4>฿ 35</h4>
+                            <span>(4.4)<i class="fa fa-star"></i></span>
+                          </div>
+                          <hr />
+                          <div class="featured-content-list">
+                            <button
+                              type="button"
+                              data-name="Red Bean"
+                              data-price="35"
+                              class="default-btn border-radius-5"
+                            >
+                              Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal -->
+
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-backdrop="static"
+        data-keyboard="true"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered justify-content-center">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Your Cart</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <table class="show-cart table"></table>
+              <div class="grand-total">
+                Total price: ฿<span class="total-cart"></span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-danger clear-cart">
+                Clear All
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="https://shorturl.at/hxGHQ"></script>
+    <script src="https://shorturl.at/cfgLR"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+
+    <footer>
+      <p>&copy; 2023 Cafe Website. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
