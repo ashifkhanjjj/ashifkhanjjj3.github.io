@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/mystyle.css')}}">
+    <title>Cafe Home</title>
+</head>
+<body>
+  <div class="hero">
+    <div class="main">
+        <label class="menu-button-wrapper" for="menu-toggle">
+          <input type="checkbox" id="menu-toggle" class="menu-button">
+          <div class="icon-wrapper">
+            <label class="hamburger">
+              <input class="hamburger-input" type="checkbox">
+              <span class="hamburger-line first"></span>
+              <span class="hamburger-line second"></span>
+              <span class="hamburger-line third"></span>
+            </label>
+          </div>
+          <div class="item-list">
+            <div><a href="{{url_for('index')}}" class="nav-link">Home</a></div>
+            <div><a href="{{url_for('order')}}" class="nav-link">Order Coffee</a></div>
+            <div><a href="#contact" class="nav-link">Contact Us</a></div>
+          </div>
+        </label>
+        <br></br>
+        <br><h1>Welcome to Our Cafe</h1></br>
+    </div>
+  </div>
+
+    <section class="interior">
+        <img src="https://i.pinimg.com/originals/81/b2/34/81b234e6d4a79f243357e9f0d928135e.png" alt="Cafe Interior">
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to make a reservation, please contact us.</p>
+        <a href="mailto:info@cafewebsite.com">ratthaphonkhan@gmail.com</a>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Cafe Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
